@@ -22,3 +22,43 @@ Each student in your tree must be represented by a string corresponding to their
 WARNING: Since we are dealing with an AVL tree, insertion and removal will be done in a similar way to inserting and removing from a regular binary search tree, but after each operation, the program must check if that node is balanced according to the relationship required by the definition of the structure. If not, a rotation should be made for it to occur.
 
 CHALLENGE: Insert into the code a function that prints to the user the complete tree when the VER command is entered (very similar to what happens with FIM). If you want to go further, make a VER <name> command that prints the tree starting from a certain node (i.e., prints a node and its descendants). The way the printing is done is up to each one, but I suggest something that indicates the node and its (up to) two children, like "Nx helps Ny and Nz." or "Nx helps Ny" or "Nx doesn't help anyone." And do this recursively for each child. The code lines related to this may be commented out or not, as the function will not be called by the Dikastis inputs.
+  
+ Input
+Your program should read inputs repeatedly until the command FIM (END in English) is called. The possible commands list is as follows:
+
+• INSERIR <name>: Inserts a node with the value <name>
+• DELETAR <name>: Deletes a node with the value <name>
+• MINIMO: Returns the string with the lowest lexicographic value
+• MAXIMO: Returns the string with the highest lexicographic value
+• ALTURA: Returns the total height of the tree, starting from the root
+• FIM: Ends the program
+Output
+Each command from the previous list will have a specific return, as follows:
+
+• INSERIR <name>:
+If <name> does not exist in the tree: <name> INSERIDO
+
+If <name> already exists in the tree: <name> JA EXISTE
+
+• DELETAR <name>:
+If <name> exists in the tree: <name> DELETADO
+
+If <name> does not exist in the tree: <name> NAO ENCONTRADO
+
+• MINIMO:
+If the tree is not empty: MENOR: <name>
+
+If the tree is empty: ARVORE VAZIA
+
+• MAXIMO:
+If the tree is not empty: MAIOR: <name>
+
+If the tree is empty: ARVORE VAZIA
+
+• ALTURA:
+ALTURA: <treeheight>
+
+• FIM:
+If the tree is not empty: <list of remaining nodes in the tree, in order>
+
+If the tree is empty: ARVORE VAZIA
