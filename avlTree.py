@@ -6,7 +6,8 @@ class NodeAVL:
         self.height = 1
 
 class Jupal:
-
+    
+    # Infos AVL
     def minimum(self, no):  # return min
         if no is None or no.left is None:
             return no
@@ -25,12 +26,43 @@ class Jupal:
         else:
             return no.height
 
+    def updateHeight(self, no):
+        return 1 + max(self.getHeight(no.left), self.getHeight(no.right))
+    
+    # Balanceamento 
     def isBalance(self, no):  # Return coeficeinte de balanceamento
         if no is None:
             return 0
         else:
             return self.getHeight(no.left) - self.getHeight(no.right)
 
+    def balanceInsert(self, balanceCoe, root, value):
+        if balanceCoe > 1 and root.left.value > value:  # esq -> dir
+            return self.rotateRight(root)
+        if balanceCoe < -1 and value > root.right.value:  # dir -> esq
+            return self.rotateLeft(root)
+        if balanceCoe > 1 and value > root.left.value:
+            root.left = self.rotateLeft(root.left)
+            return self.rotateRight(root)
+        if balanceCoe < -1 and value < root.right.value:
+            root.right = self.rotateRight(root.right)
+            return self.rotateLeft(root)
+
+        return None
+
+    def balanceDelete(self, balanceCoe, no):
+        if balanceCoe > 1 and self.isBalance(no.left) >= 0:
+            return self.rotateRight(no)
+        if balanceCoe < -1 and self.isBalance(no.right) <= 0:
+            return self.rotateLeft(no)
+        if balanceCoe > 1 and self.isBalance(no.left) < 0:
+            no.left = self.rotateLeft(no.left)
+            return self.rotateRight(no)
+        if balanceCoe < -1 and self.isBalance(no.right) > 0:
+            no.right = self.rotateRight(no.right)
+            return self.rotateLeft(no)
+    
+    # Rotações
     def rotateRight(self, no):   # Rotaçao direita e return "raiz"
         newNo = no.left
         oldNo = newNo.right
@@ -50,8 +82,9 @@ class Jupal:
         no.height = 1 + max(self.getHeight(no.left), self.getHeight(no.right))
         newNo.height = 1 + max(self.getHeight(newNo.left), self.getHeight(newNo.right))
         return newNo
-
-    def insert(self, value, root, loops=1):  # inserir
+    
+    # Inserir
+    def insert(self, value, root, loops=1):  
         if root is None:  # Cria No
             return NodeAVL(value)
         elif value <= root.value:  # procurando onde por
@@ -61,25 +94,19 @@ class Jupal:
 
         # altura
         try:
-            root.height = int(1 + max(self.getHeight(root.left), self.getHeight(root.right)))
+            root.height = self.updateHeight(root)
         except TypeError:  # Correçao de bug
                 root.height = loops
 
         # balanceamento
         balanceCoe = self.isBalance(root)  # int
-        if balanceCoe > 1 and root.left.value > value:  # esq -> dir
-            return self.rotateRight(root)
-        if balanceCoe < -1 and value > root.right.value:  # dir -> esq
-            return self.rotateLeft(root)
-        if balanceCoe > 1 and value > root.left.value:
-            root.left = self.rotateLeft(root.left)
-            return self.rotateRight(root)
-        if balanceCoe < -1 and value < root.right.value:
-            root.right = self.rotateRight(root.right)
-            return self.rotateLeft(root)
+        balanceRoot = self.balanceInsert(balanceCoe,root, value)
+        if balanceRoot:
+            return balanceRoot
 
         return root
-
+    
+    # Remover
     def delete(self, value, no):
         if no is None:
             return no
@@ -104,23 +131,17 @@ class Jupal:
             return no
 
         # Altura
-        no.height = 1 + max(self.getHeight(no.left), self.getHeight(no.right))
+        no.height = self.updateHeight(no)
 
-        # Balanceamento
-        balanceCoe = self.isBalance(no)
-        if balanceCoe > 1 and self.isBalance(no.left) >= 0:
-            return self.rotateRight(no)
-        if balanceCoe < -1 and self.isBalance(no.right) <= 0:
-            return self.rotateLeft(no)
-        if balanceCoe > 1 and self.isBalance(no.left) < 0:
-            no.left = self.rotateLeft(no.left)
-            return self.rotateRight(no)
-        if balanceCoe < -1 and self.isBalance(no.right) > 0:
-            no.right = self.rotateRight(no.right)
-            return self.rotateLeft(no)
+        # balanceamento
+        balanceCoe = self.isBalance(no)  # int
+        balanceRoot = self.balanceDelete(balanceCoe, no)
+        if balanceRoot:
+            return balanceRoot
 
         return no
-
+    
+    # Print da AVL & desafio I
     def exib(self, root):
         nos = [] #lista de Nos
         self.collectNos(root, nos)
@@ -135,7 +156,8 @@ class Jupal:
             self.collectNos(root.left, nos)
             nos.append(root)  # add a lista
             self.collectNos(root.right, nos)
-
+    
+    # Desafio II
     def exibSemiRoot(self, value, root):
         semiRoot = self.find(value, root)
         if semiRoot is not None:
@@ -159,6 +181,7 @@ class Jupal:
             return self.find(value, root.right)
 
 
+# Parte principal
 jupal = Jupal()
 root = None
 end = False
@@ -195,9 +218,9 @@ while not end:
         elif request[0] == 'ALTURA':
             alt = jupal.getHeight(root)
             print(f'ALTURA: {alt}')
-        elif request[0] == 'VER' and request[1] in jupaL:
+        elif request[0] == 'VER' and request[1] in jupaL:  # desafio II
             jupal.exibSemiRoot(request[1], root)
-        elif request[0] == 'VER':
+        elif request[0] == 'VER':  # desafio I
             if root is not None:
                 jupal.exib(root)
                 print('')
