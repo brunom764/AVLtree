@@ -27,10 +27,15 @@ CHALLENGE: Insert into the code a function that prints to the user the complete 
 Your program should read inputs repeatedly until the command FIM (END in English) is called. The possible commands list is as follows:
 
 • INSERIR <name>: Inserts a node with the value <name>
+  
 • DELETAR <name>: Deletes a node with the value <name>
+  
 • MINIMO: Returns the string with the lowest lexicographic value
+  
 • MAXIMO: Returns the string with the highest lexicographic value
+  
 • ALTURA: Returns the total height of the tree, starting from the root
+  
 • FIM: Ends the program
   
   
