@@ -3,7 +3,7 @@ Implementação de uma AVL tree usando python
 
 
 
-Problem Statement
+## Problem Statement
 
 Depois de tanto exercitar suas habilidades de programação no primeiro período de SI, chegou a hora de cursar a temida matéria de Algoritmos e Estruturas de Dados. Nessa peneira, você sabe que deverá se esforçar ao máximo para conseguir compreender os assuntos passados pelo professor e ainda realizar as atividades práticas no prazo estipulado. No entanto, todos sabem que a vida é uma experiência colaborativa, e para os estudantes isso não é diferente.
 
@@ -13,7 +13,7 @@ O sistema, chamado carinhosamente de JUPAL, possui três funções básicas: bus
 
 Como você bem sabe, árvores AVL fazem um balanceamento automático de suas folhas todas as vezes que é feita uma inserção ou remoção de maneira a sempre manter a altura de todas mais ou menos igual. Seguindo esse raciocínio, o sistema é capaz de manter todos os integrantes felizes, sem sobrecargas acontecendo de um lado ou de outro da árvore.
 
-DESCRIÇÃO DA IMPLEMENTAÇÃO
+## DESCRIÇÃO DA IMPLEMENTAÇÃO
 
 Você deve implementar uma árvore balanceada AVL, com um fator de balanceamento estável, tal que, para todos os nós da árvore: -1 <= f.b. <= 1. Para isso, estipula-se que o fator de balanceamento de cada dado nó é definido como: f.b(Nó) = altura(Nó->direita) - altura(Nó->esquerda). Alguns pontos importantes:
 
@@ -26,7 +26,7 @@ ATENÇÃO: Já que estamos lidando com uma AVL, a inserção e a remoção serã
 
 DESAFIO (opcional): Para conseguir pontuação EXTRA, insira no código uma função que imprima para o usuário a árvore completa ao ser inserido o comando VER (bem parecido com o que acontece com FIM). Se quiser ir além, faça um comando VER <nome> que imprima a árvore a partir de um determinado nó (ou seja, imprime um nó e seus descendentes). A maneira que a impressão é feita fica a cargo de cada um, mas eu sugiro algo que indique o nó e seus (até) dois filhos, como "Nx ajuda Ny e Nz." ou "Nx ajuda Ny" ou "Nx não ajuda ninguém." E faz isso recursivamente para cada filho. As linhas do código referente a isso podem estar comentadas ou não, já que a função não será chamadas pelos inputs do Dikastis.
 
-Input
+## Input
 
 Seu programa deverá ler entradas repetidamente até que o comando FIM seja chamado. A lista de comandos possíveis é a seguinte:
 
@@ -42,7 +42,7 @@ Seu programa deverá ler entradas repetidamente até que o comando FIM seja cham
 
 • FIM : Finaliza o programa
 
-Output
+## Output
 
 Cada comando da lista anterior terá um retorno específico, como a seguir:
 
@@ -80,11 +80,11 @@ Caso a árvore não esteja vazia: <lista dos nós restantes da árvore, em ordem
 
 Caso a árvore esteja vazia: ARVORE VAZIA
 
-Examples
+## Examples
 
-Case: 1
+### Case: 1
 
-Input
+#### Input
 
 DELETAR Fabinho
 INSERIR Fabinho
@@ -103,7 +103,7 @@ ALTURA
 MINIMO
 FIM
 
-Output
+#### Output
 
 Fabinho NAO ENCONTRADO
 Fabinho INSERIDO
@@ -122,9 +122,9 @@ ALTURA: 3
 MENOR: Jorginho
 Jorginho Kayke Pedro Vagner Wanderson
 
-Case: 2
+### Case: 2
 
-Input
+#### Input
 
 DELETAR Love
 INSERIR Magrao
@@ -164,7 +164,7 @@ MINIMO
 MAXIMO
 FIM
 
-Output
+#### Output
 
 Love NAO ENCONTRADO
 Magrao INSERIDO
@@ -204,9 +204,9 @@ MENOR: JTavares
 MAIOR: TNeves
 JTavares Maidana Rithely TNeves
 
-Case: 3
+### Case: 3
 
-Input
+#### Input
 
 MINIMO
 INSERIR Mailson
@@ -230,7 +230,7 @@ DELETAR Patric
 INSERIR JTavares
 FIM
 
-Output
+#### Output
 
 ARVORE VAZIA
 Mailson INSERIDO
@@ -254,9 +254,9 @@ Patric DELETADO
 JTavares INSERIDO
 JTavares Mikael Ricardinho
 
-Case: 4
+### Case: 4
 
-Input
+#### Input
 
 INSERIR Ronaldo
 MINIMO
@@ -280,7 +280,7 @@ MAXIMO
 INSERIR Toro
 FIM
 
-Output
+#### Output
 
 Ronaldo INSERIDO
 MENOR: Ronaldo
