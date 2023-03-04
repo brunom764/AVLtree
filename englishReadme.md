@@ -32,7 +32,9 @@ Your program should read inputs repeatedly until the command FIM (END in English
 • MAXIMO: Returns the string with the highest lexicographic value
 • ALTURA: Returns the total height of the tree, starting from the root
 • FIM: Ends the program
-Output
+  
+  
+## Output
 Each command from the previous list will have a specific return, as follows:
 
 • INSERIR <name>:
