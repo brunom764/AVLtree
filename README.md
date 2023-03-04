@@ -1,5 +1,5 @@
 # AVLtree
-Implementação de uma AVL tree usando python com as funções de inserir, rotacionar, balancear, remover e exibição em ordem
+Implementação de uma AVL tree usando python com as funções de inserir, rotacionar, balancear, remover, exibição em ordem e exibição de semi raizes
 
 ## Problem Statement
 
