@@ -1,8 +1,6 @@
 # AVLtree
 Implementação de uma AVL tree usando python
 
-
-
 ## Problem Statement
 
 Depois de tanto exercitar suas habilidades de programação no primeiro período de SI, chegou a hora de cursar a temida matéria de Algoritmos e Estruturas de Dados. Nessa peneira, você sabe que deverá se esforçar ao máximo para conseguir compreender os assuntos passados pelo professor e ainda realizar as atividades práticas no prazo estipulado. No entanto, todos sabem que a vida é uma experiência colaborativa, e para os estudantes isso não é diferente.
@@ -24,11 +22,12 @@ Cada aluno da sua árvore deverá ser representado por uma string que correspond
 
 ATENÇÃO: Já que estamos lidando com uma AVL, a inserção e a remoção serão feitas de maneira análoga à inserção e remoção de uma árvore de busca binária comum, mas após cada operação o programa deve verificar se aquele nó está balanceado de acordo com a relação exigida pela definição da estrutura. Caso não esteja, uma rotação deverá ser feita para que isso ocorra.
 
-DESAFIO (opcional): Para conseguir pontuação EXTRA, insira no código uma função que imprima para o usuário a árvore completa ao ser inserido o comando VER (bem parecido com o que acontece com FIM). Se quiser ir além, faça um comando VER <nome> que imprima a árvore a partir de um determinado nó (ou seja, imprime um nó e seus descendentes). A maneira que a impressão é feita fica a cargo de cada um, mas eu sugiro algo que indique o nó e seus (até) dois filhos, como "Nx ajuda Ny e Nz." ou "Nx ajuda Ny" ou "Nx não ajuda ninguém." E faz isso recursivamente para cada filho. As linhas do código referente a isso podem estar comentadas ou não, já que a função não será chamadas pelos inputs do Dikastis.
+DESAFIO:  Insira no código uma função que imprima para o usuário a árvore completa ao ser inserido o comando VER (bem parecido com o que acontece com FIM). Se quiser ir além, faça um comando VER <nome> que imprima a árvore a partir de um determinado nó (ou seja, imprime um nó e seus descendentes). A maneira que a impressão é feita fica a cargo de cada um, mas eu sugiro algo que indique o nó e seus (até) dois filhos, como "Nx ajuda Ny e Nz." ou "Nx ajuda Ny" ou "Nx não ajuda ninguém." E faz isso recursivamente para cada filho. As linhas do código referente a isso podem estar comentadas ou não, já que a função não será chamadas pelos inputs do Dikastis.
 
 ## Input
 
-Seu programa deverá ler entradas repetidamente até que o comando FIM seja chamado. A lista de comandos possíveis é a seguinte:
+Seu programa deverá ler entradas repetidamente até que o comando FIM seja chamado. 
+A lista de comandos possíveis é a seguinte:
 
 • INSERIR <nome> : Insere um nó com o valor <nome>
 
