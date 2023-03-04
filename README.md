@@ -29,51 +29,51 @@ DESAFIO:  Insira no código uma função que imprima para o usuário a árvore c
 Seu programa deverá ler entradas repetidamente até que o comando FIM seja chamado. 
 A lista de comandos possíveis é a seguinte:
 
-• INSERIR <nome> : Insere um nó com o valor <nome>
+#### • INSERIR <nome> : Insere um nó com o valor <nome>
 
-• DELETAR <nome> : Deleta um nó com o valor <nome>
+#### • DELETAR <nome> : Deleta um nó com o valor <nome>
 
-• MINIMO : Retorna a string com o menor valor lexicográfico
+#### • MINIMO : Retorna a string com o menor valor lexicográfico
 
-• MAXIMO : Retorna a string com o maior valor lexicográfico
+#### • MAXIMO : Retorna a string com o maior valor lexicográfico
 
-• ALTURA : Retorna a altura total da árvore, partindo da raiz
+#### • ALTURA : Retorna a altura total da árvore, partindo da raiz
 
-• FIM : Finaliza o programa
+#### • FIM : Finaliza o programa
 
 ## Output
 
 Cada comando da lista anterior terá um retorno específico, como a seguir:
 
-• INSERIR <nome>:
+#### • INSERIR <nome>:
 
 Caso <nome> não exista na árvore: <nome> INSERIDO
 
 Caso <nome> já exista na árvore: <nome> JA EXISTE
 
-• DELETAR <nome>:
+#### • DELETAR <nome>:
 
 Caso <nome> exista na árvore: <nome> DELETADO
 
 Caso <nome> não exista na árvore: <nome> NAO ENCONTRADO
 
-• MINIMO:
+#### • MINIMO:
 
 Caso a árvore não esteja vazia: MENOR: <nome>
 
 Caso a árvore esteja vazia: ARVORE VAZIA
 
-• MAXIMO:
+#### • MAXIMO:
 
 Caso a árvore não esteja vazia: MAIOR: <nome>
 
 Caso a árvore esteja vazia: ARVORE VAZIA
 
-• ALTURA:
+#### • ALTURA:
 
 ALTURA: <alturadaarvore>
 
-• FIM:
+#### • FIM:
 
 Caso a árvore não esteja vazia: <lista dos nós restantes da árvore, em ordem>
 
